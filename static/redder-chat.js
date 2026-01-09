@@ -30,7 +30,7 @@
         
         #redder-chat-button {
             position: fixed;
-            ${CONFIG.WIDGET_POSITION.includes('bottom') ? 'bottom: 20px;' : 'top: 20px;'}
+            ${CONFIG.WIDGET_POSITION.includes('bottom') ? 'bottom: 100px;' : 'top: 20px;'}
             ${CONFIG.WIDGET_POSITION.includes('right') ? 'right: 20px;' : 'left: 20px;'}
             width: 60px;
             height: 60px;
@@ -55,7 +55,7 @@
         
         #redder-chat-window {
             position: fixed;
-            ${CONFIG.WIDGET_POSITION.includes('bottom') ? 'bottom: 90px;' : 'top: 90px;'}
+            ${CONFIG.WIDGET_POSITION.includes('bottom') ? 'bottom: 170px;' : 'top: 90px;'}
             ${CONFIG.WIDGET_POSITION.includes('right') ? 'right: 20px;' : 'left: 20px;'}
             width: 380px;
             height: 600px;
