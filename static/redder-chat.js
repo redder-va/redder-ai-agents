@@ -11,7 +11,7 @@
     
     // Configuration
     const CONFIG = {
-        API_URL: 'https://127.0.0.1:5000/chat/message',  // SCHIMBĂ CU URL-UL TĂU
+        API_URL: 'https://redder-ai-backend.onrender.com/chat/message',
         WIDGET_POSITION: 'bottom-right',  // bottom-right, bottom-left, top-right, top-left
         PRIMARY_COLOR: '#667eea',
         SECONDARY_COLOR: '#764ba2',
