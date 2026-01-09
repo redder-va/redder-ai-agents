@@ -11,7 +11,7 @@ services:
     startCommand: gunicorn main:app --bind 0.0.0.0:$PORT --timeout 120
     envVars:
       - key: GOOGLE_API_KEY
-        value: AIzaSyA5jsAK7A3iWwXwS-YBiCgfDJpqHCu55SU
+        sync: false  # Set in Render Dashboard for security
       - key: WC_URL
         value: https://redder.ro
       - key: WC_CONSUMER_KEY
