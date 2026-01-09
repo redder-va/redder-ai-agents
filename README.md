@@ -10,6 +10,32 @@ Sistem AI cu 15 agenți specializați pentru automatizarea business-ului magazin
 
 ---
 
+## 🚀 Quick Start - Laptop Nou
+
+### **Instalare Automată (Recomandat)**
+
+```powershell
+# 1. Clone repository
+git clone https://github.com/redder-va/redder-ai-agents.git
+cd redder-ai-agents
+
+# 2. Rulează setup automat
+.\setup.bat
+
+# 3. Editează .env cu credențialele tale (se deschide automat)
+
+# 4. Pornește aplicația
+.\start.bat
+```
+
+✅ Backend pornit: http://127.0.0.1:5000
+
+### **Setup Manual**
+
+Dacă preferi setup manual, vezi: **[SETUP.md](SETUP.md)** - Ghid complet pas cu pas
+
+---
+
 ## 🎯 Funcționalități
 
 ### 💬 **Chat AI Live**
@@ -80,12 +106,14 @@ Sistem AI cu 15 agenți specializați pentru automatizarea business-ului magazin
 ├── static/              # Chat widget JS
 ├── main.py             # Backend API Flask
 ├── requirements.txt    # Dependențe Python
+├── setup.bat           # Setup automat (laptop nou)
+├── start.bat           # Pornire rapidă aplicație
 └── render.yaml         # Configurare Render deployment
 ```
 
 ---
 
-## 🚀 Deploy
+## 🚀 Deploy Production
 
 Aplicația rulează 24/7 în cloud pe Render.com. 
 
@@ -96,6 +124,62 @@ git commit -m "Your changes"
 git push origin main
 ```
 → Render face auto-deploy în 2-3 minute.
+
+**Documentație deployment:** [RENDER_DEPLOY.md](RENDER_DEPLOY.md)
+
+---
+
+## 💻 Mutare pe Alt Laptop
+
+### **Opțiunea 1: Setup Automat (5 minute)**
+
+```powershell
+git clone https://github.com/redder-va/redder-ai-agents.git
+cd redder-ai-agents
+.\setup.bat
+```
+
+Setup-ul instalează automat:
+- ✅ Virtual environment (venv311)
+- ✅ Toate dependențele Python
+- ✅ Fișier .env din template
+- ✅ Configurare completă
+
+**Apoi:**
+```powershell
+# Editează .env cu credențialele (se deschide automat)
+# Pornește aplicația
+.\start.bat
+```
+
+### **Opțiunea 2: Setup Manual**
+
+Vezi ghidul complet: **[SETUP.md](SETUP.md)**
+
+**Ce trebuie transferat:**
+- ❌ NU copia folderul `venv311/` (se recrează)
+- ❌ NU copia folderul `node_modules/` (se recrează)
+- ✅ COPIAZĂ doar fișierul `.env` (credențiale)
+- ✅ SAU clonează de pe GitHub și configurează .env nou
+
+---
+
+## 🔧 Configurare Locală (Dezvoltare)
+
+**1. Clone repository:**
+```bash
+git clone https://github.com/redder-va/redder-ai-agents.git
+cd redder-ai-agents
+```
+
+**2. Instalează dependențe:**
+```bash
+python -m venv venv311
+venv311\Scripts\activate
+pip install -r requirements.txt
+```
+
+**3. Configurează .env:**
 
 **Documentație deployment:** [RENDER_DEPLOY.md](RENDER_DEPLOY.md)
 
