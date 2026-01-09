@@ -37,7 +37,7 @@ from agents.loyalty_manager import LoyaltyManagerAgent
 from agents.upsell_manager import UpsellManagerAgent
 from agents.live_chat import LiveChatAgent
 from feedback.feedback_handler import FeedbackHandler
-from notifications.whatsapp_notifier import get_whatsapp_notifier
+from notifications.telegram_notifier import get_telegram_notifier
 from agents.llm_helper import generate_text
 
 # Production configuration
@@ -301,9 +301,9 @@ def order_new():
     """
     data = request.json
     
-    # Trimite notificare WhatsApp
-    whatsapp = get_whatsapp_notifier()
-    notification_sent = whatsapp.send_order_notification(data)
+    # Trimite notificare Telegram
+    telegram = get_telegram_notifier()
+    notification_sent = telegram.send_order_notification(data)
     
     # Procesează comanda și cu agentul (pentru context și învățare)
     order_text = f"Comandă nouă #{data.get('order_number')} de la {data.get('customer_name')}"
@@ -312,7 +312,7 @@ def order_new():
     return jsonify({
         "status": "success",
         "order_number": data.get('order_number'),
-        "whatsapp_notification_sent": notification_sent,
+        "telegram_notification_sent": notification_sent,
         "agent_response": agent_result
     })
 
