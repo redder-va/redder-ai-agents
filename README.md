@@ -1,113 +1,154 @@
-# 🤖 Sistem Multi-Agent AI - Redder.ro
+# 🤖 Redder AI - Multi-Agent System
 
-Platformă completă de automatizare business pentru magazinul online de cocktail-uri și accesorii de bar, cu **12 agenți AI specializați** și **notificări WhatsApp automate** 📱
+Sistem AI cu 15 agenți specializați pentru automatizarea business-ului magazinului online redder.ro.
 
-## 📚 Documentație Completă
+## ✅ Status: LIVE în producție
 
-**👉 [GHID_UTILIZARE.md](GHID_UTILIZARE.md) - Ghid complet cu exemple practice pentru fiecare agent**
-
-**👉 [WOOCOMMERCE_SYNC_GUIDE.md](WOOCOMMERCE_SYNC_GUIDE.md) - Sincronizare continuă cu redder.ro (NOU!)**
-
-**👉 [LIVECHAT_INTEGRATION_GUIDE.md](LIVECHAT_INTEGRATION_GUIDE.md) - Chat live pe website cu AI (NOU!)**
-
-**👉 [LINKS_GUIDE.md](LINKS_GUIDE.md) - Linkuri automate trackabile în campanii**
-
-**👉 [WHATSAPP_README.md](WHATSAPP_README.md) - Setup rapid notificări WhatsApp (5 minute)**
-
-## 🚀 Start Rapid
-
-### Backend (Flask API)
-```bash
-.\venv311\Scripts\activate
-python main.py
-```
-✅ Server pornit pe: http://127.0.0.1:5000
-
-### Frontend (React Dashboard)
-```bash
-run_frontend.bat
-```
-✅ Dashboard pornit pe: http://localhost:3000
-
-### 📱 Notificări WhatsApp (NOU!)
-```bash
-# Test rapid
-python test_whatsapp.py
-```
-✅ Mesaje automate la 0763038001 pentru comenzi noi
+- **Backend**: https://redder-ai-backend.onrender.com
+- **Chat Live**: https://redder.ro (widget în dreapta jos)
+- **Platform**: Render.com (cloud hosting gratuit)
 
 ---
 
-## 👥 12 Agenți AI Disponibili
+## 🎯 Funcționalități
 
-### Customer Experience (5 agenți)
-1. **Agent Serviciu Clienți** - Suport 24/7, răspunsuri automate
-2. **Agent Live Chat Website** - Chat în timp real cu clienți, comparații produse, rețete 🍹 **(NOU!)**
-3. **Agent Gestionare Recenzii** - Răspunsuri la review-uri, analiză sentiment
-4. **Agent Fidelizare Clienți** - Program loialitate, puncte, recompense VIP
-5. **Agent Cross-sell & Upsell** - Recomandări inteligente, bundle-uri
+### 💬 **Chat AI Live**
+- Widget interactiv pe site
+- Răspunsuri instant (1-2 sec)
+- Sugestii de produse personalizate
+- Rețete cocktail-uri
+- Model: Google Gemini 1.5 Flash
 
-### Conținut & Marketing (4 agenți)
-5. **Agent Creare Conținut** - Rețete cocktail-uri, descrieri produse
-6. **Agent Marketing** - Campanii personalizate, strategii
-7. **Agent Email Marketing** - Newsletter-e, campanii email automate
-8. **Agent Social Media** - Postări Instagram/Facebook, calendare conținut
+### 📱 **Notificări Telegram**
+- Comenzi noi → mesaj instant pe Telegram
+- Detalii complete: client, produse, total, adresă
+- Bot: @Redervabot
 
-### Operațiuni & Logistică (4 agenți)
-9. **Agent Gestionare Comenzi** - Procesare automată, tracking, probleme
-10. **Agent Transport & Livrări** - Calcul costuri, optimizare rute, tracking AWB
-11. **Agent Analiză Vânzări** - Rapoarte, predicții, insights
-12. **Agent Gestionare Stoc** - Monitoring, sugestii comenzi furnizori
-
-## ✨ Funcționalități Noi
-
-### � LiveChat AI pe Website (NOU!)
-- ✅ **Widget chat integrabil** pe redder.ro pentru conversații live cu clienții
-- ✅ **Comparații produse** - "Care e diferența între Kumaniok și Valahia Gold?"
-- ✅ **Rețete cocktailuri** - "Cum fac un Moscow Mule?" cu produse din magazin
-- ✅ **Verificare stoc** în timp real și recomandări personalizate
-- ✅ **Context persistent** - agentul își amintește conversația
-- 📖 Vezi: [LIVECHAT_INTEGRATION_GUIDE.md](LIVECHAT_INTEGRATION_GUIDE.md)
-
-### 🔗 Sincronizare Continuă cu Redder.ro
-- ✅ **Conexiune permanentă** la magazinul real redder.ro
-- ✅ **Sincronizare automată** produse, stocuri, SKU-uri, prețuri
-- ✅ **Cache inteligent** - refresh automat la 15 minute
-- ✅ **Date în timp real** pentru toți agenții AI
-- ✅ **Tracking comenzi** și statistici vânzări live
-- ✅ **Predicții bazate strict** pe date reale din magazin
-
-**Test conexiune:**
-```bash
-python test_woocommerce.py
-```
-
-### 🔗 Linkuri Automate în Campanii
-- ✅ Generare automată linkuri trackabile (UTM) în toate campaniile
-- ✅ Tracking complet: sursă, mediu, campanie, acțiune
-- ✅ Linkuri personalizate pentru fiecare categorie (vodka, rom, gin, etc.)
-- ✅ CTA buttons cu tracking integrat
-- ✅ Setare automată în Marketing, Email și Social Media agents
-
-**Exemplu link generat:**
-```
-https://redder.ro/categorie-produs/vodka/?utm_source=ai-agent&utm_medium=email&utm_campaign=promotie-iarna&utm_content=shop-now
-```
-
-### �📱 Notificări WhatsApp Automate
-- ✅ Mesaje instant la 0763038001 pentru comenzi noi
-- ✅ Toate detaliile comenzii formatate profesional
-- ✅ Integrare automată cu WooCommerce
-- ✅ Setup în 5 minute cu Twilio
-- 💰 Cost: ~$0.01/mesaj (~$8.50/lună pentru 1000 comenzi)
-
-**[Configurare rapidă →](WHATSAPP_README.md)**
+### 🤖 **15 Agenți AI Specializați**
+1. Customer Service - suport clienți 24/7
+2. Content Creator - descrieri produse, rețete
+3. Sales Analyst - analiză vânzări
+4. Marketing - campanii personalizate
+5. Inventory Manager - gestiune stoc
+6. Email Marketing - newsletter automat
+7. Social Media - posturi automate
+8. Review Manager - răspuns la review-uri
+9. Order Manager - procesare comenzi
+10. Shipping Manager - logistică
+11. Loyalty Manager - program fidelitate
+12. Upsell Manager - recomandări cross-sell
+13. Live Chat - conversații în timp real
+14. Link Generator - link-uri trackabile
+15. Product Scraper - importare produse
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tehnologii
 
 **Backend:**
+- Python 3.11
+- Flask + Gunicorn
+- Google Gemini AI
+- LangChain
+- FAISS (vector store)
+
+**Frontend:**
+- React.js
+- JavaScript widget
+
+**Deployment:**
+- Render.com (cloud hosting)
+- GitHub auto-deploy
+- Cron job keepalive
+
+**Integrări:**
+- WooCommerce API
+- Telegram Bot API
+- Google AI Studio
+
+---
+
+## 📂 Structură Proiect
+
+```
+├── agents/              # 15 agenți AI specializați
+├── feedback/            # Sistem feedback și învățare
+├── memory/              # Vector store (FAISS)
+├── notifications/       # Telegram notifier
+├── services/            # WooCommerce integration
+├── frontend/            # React dashboard
+├── static/              # Chat widget JS
+├── main.py             # Backend API Flask
+├── requirements.txt    # Dependențe Python
+└── render.yaml         # Configurare Render deployment
+```
+
+---
+
+## 🚀 Deploy
+
+Aplicația rulează 24/7 în cloud pe Render.com. 
+
+**Pentru update-uri:**
+```bash
+git add .
+git commit -m "Your changes"
+git push origin main
+```
+→ Render face auto-deploy în 2-3 minute.
+
+**Documentație deployment:** [RENDER_DEPLOY.md](RENDER_DEPLOY.md)
+
+---
+
+## 🔧 Configurare Locală (Dezvoltare)
+
+**1. Clone repository:**
+```bash
+git clone https://github.com/redder-va/redder-ai-agents.git
+cd redder-ai-agents
+```
+
+**2. Instalează dependențe:**
+```bash
+python -m venv venv311
+venv311\Scripts\activate
+pip install -r requirements.txt
+```
+
+**3. Configurează .env:**
+```
+GOOGLE_API_KEY=your_key
+TELEGRAM_BOT_TOKEN=your_token
+TELEGRAM_CHAT_ID=your_chat_id
+WC_URL=https://redder.ro
+WC_CONSUMER_KEY=your_key
+WC_CONSUMER_SECRET=your_secret
+```
+
+**4. Rulează:**
+```bash
+python main.py
+```
+
+---
+
+## 📊 Limitări Plan Gratuit Render
+
+- 750 ore/lună (suficient cu keepalive cron)
+- 512 MB RAM
+- Cold start eliminat prin ping automat
+- SSL gratuit inclus
+
+---
+
+## 📝 Licență
+
+Proprietary - Redder.ro © 2026
+
+---
+
+**Developed with ❤️ by Redder Team**
 - Python 3.11.6 (venv311)
 - Flask 3.1.2 + Flask-CORS
 - Google Gemini API (gemini-2.0-flash)
