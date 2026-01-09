@@ -48,15 +48,15 @@ env = os.environ.get('ENVIRONMENT', 'development')
 if env == 'production':
     from config import ProductionConfig
     app.config.from_object(ProductionConfig)
-    
-    # Production CORS - strict
-    CORS(app, origins=[
-        'https://redder.ro',
-        'https://www.redder.ro'
-    ])
-else:
-    # Development CORS - permissive
-    CORS(app)
+
+# CORS - permissive pentru a permite toate origin-urile (temporar pentru testare)
+CORS(app, resources={
+    r"/*": {
+        "origins": "*",
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allow_headers": ["Content-Type"]
+    }
+})
 
 # Rate limiting pentru production
 if app.config.get('RATELIMIT_ENABLED'):
