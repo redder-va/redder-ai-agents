@@ -57,3 +57,7 @@ data/training_log.json
 # Backup files
 *.bak
 *.tmp
+
+# Test files with secrets
+test_telegram_*.py
+test_*.py
