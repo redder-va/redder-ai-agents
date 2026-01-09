@@ -37,7 +37,7 @@ from agents.loyalty_manager import LoyaltyManagerAgent
 from agents.upsell_manager import UpsellManagerAgent
 from agents.live_chat import LiveChatAgent
 from feedback.feedback_handler import FeedbackHandler
-from notifications.whatsapp_notifier import get_whatsapp_notifier
+# from notifications.whatsapp_notifier import get_whatsapp_notifier  # Disabled - no Twilio
 from agents.llm_helper import generate_text
 
 # Production configuration
@@ -301,9 +301,10 @@ def order_new():
     """
     data = request.json
     
-    # Trimite notificare WhatsApp
-    whatsapp = get_whatsapp_notifier()
-    notification_sent = whatsapp.send_order_notification(data)
+    # Trimite notificare WhatsApp (DISABLED - no Twilio)
+    # whatsapp = get_whatsapp_notifier()
+    # notification_sent = whatsapp.send_order_notification(data)
+    notification_sent = False  # Disabled
     
     # Procesează comanda și cu agentul (pentru context și învățare)
     order_text = f"Comandă nouă #{data.get('order_number')} de la {data.get('customer_name')}"
