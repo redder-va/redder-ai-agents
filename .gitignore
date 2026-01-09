@@ -36,27 +36,10 @@ logs/
 Thumbs.db
 
 # SSL certificates
-ssl/*.pem
-ssl/*.key
-ssl/*.crt
-ssl/*.pfx
-ssl/*.cer
-ssl/*.exe
-ssl/*.log
+ssl/
 
 # Data
 data/training_log.json
-
-# Office files
-*.docx
-*.xlsx
-
-# Installers
-*.exe
-
-# Backup files
-*.bak
-*.tmp
 
 # Test files with secrets
 test_telegram_*.py
