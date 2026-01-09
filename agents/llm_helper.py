@@ -6,13 +6,13 @@ try:
 except Exception:
     genai_new = None
 
-def generate_text(llm: Any, prompt: str, model: str = None) -> str:
+def generate_text(llm: Any, prompt: str, model: str = 'gemini-1.5-flash') -> str:
     """Try multiple call patterns for different LLM wrappers and return text.
 
     Order:
     1. `llm.invoke(prompt)` and use `.content` or `.text` if present
     2. `llm(prompt)` direct call and extract text
-    3. Fallback to Google Gemini (free, cloud-based); if unavailable, return a simple rule-based response
+    3. Fallback to Google Gemini (free, cloud-based); uses gemini-1.5-flash by default for speed
     """
     # 1. try invoke
     try:
@@ -52,7 +52,7 @@ def generate_text(llm: Any, prompt: str, model: str = None) -> str:
     # 3. fallback to Google Gemini (prefer new google.genai client; else REST API)
     google_key = os.environ.get('GOOGLE_API_KEY')
     if google_key:
-        mdl = (model or 'gemini-2.0-flash')
+        mdl = model  # Use provided model (default: gemini-1.5-flash for speed)
         # Try new google.genai client
         if genai_new is not None:
             try:

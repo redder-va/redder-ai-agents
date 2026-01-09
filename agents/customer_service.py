@@ -10,12 +10,16 @@ class CustomerServiceAgent:
         self.backstory = 'Ești un reprezentant prietenos și bine informat al serviciului clienți pentru Redder.ro, specializat în cocktail-uri și servicii de bar. Înveți din interacțiunile anterioare pentru a îmbunătăți răspunsurile.'
 
     def search_knowledge_base(self, query):
-        results = self.vector_store.similarity_search(query, k=3)
-        return "\n".join([doc.page_content for doc in results])
+        # Optimizat: doar 2 rezultate pentru viteză
+        results = self.vector_store.similarity_search(query, k=2)
+        return "\n".join([doc.page_content[:300] for doc in results])  # Max 300 chars per result
 
     def respond(self, message):
         knowledge = self.search_knowledge_base(message)
-        prompt = f"Tu ești {self.role}. {self.backstory}. Obiectivul tău este: {self.goal}. Cunoștințe relevante: {knowledge}. Răspunde În ROMÂNĂ la acest mesaj de la client: {message}"
-        response = generate_text(self.llm, prompt)
-        self.vector_store.add_texts([f"Client: {message}\nAgent: {response}"])
+        # Prompt optimizat - mai scurt și direct
+        prompt = f"Ești asistentul Redder.ro (magazin băuturi alcoolice). Răspunde scurt și prietenos în ROMÂNĂ.\n\nContext: {knowledge}\n\nClient: {message}\n\nRăspuns:"
+        # Folosește modelul rapid gemini-1.5-flash
+        response = generate_text(self.llm, prompt, model='gemini-1.5-flash')
+        # Skip vector store add pentru viteză (se poate activa mai târziu pentru învățare)
+        # self.vector_store.add_texts([f"Client: {message}\nAgent: {response}"])
         return response

@@ -22,3 +22,11 @@ services:
         value: production
       - key: PYTHON_VERSION
         value: 3.11.6
+
+  # Cron job pentru a preveni cold start
+  - type: cron
+    name: redder-ai-keepalive
+    env: python
+    schedule: "*/10 * * * *"  # La fiecare 10 minute
+    buildCommand: pip install requests
+    startCommand: python -c "import requests; requests.get('https://redder-ai-backend.onrender.com/health')"
