@@ -1,0 +1,24 @@
+# Render Deploy Configuration
+# Citește: https://render.com/docs/yaml-spec
+
+services:
+  - type: web
+    name: redder-ai-backend
+    env: python
+    region: frankfurt
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn main:app --bind 0.0.0.0:$PORT --timeout 120
+    envVars:
+      - key: GOOGLE_API_KEY
+        value: AIzaSyA5jsAK7A3iWwXwS-YBiCgfDJpqHCu55SU
+      - key: WC_URL
+        value: https://redder.ro
+      - key: WC_CONSUMER_KEY
+        value: ck_91c27ab6ddbf7062eaad93982bf60d386f85688c
+      - key: WC_CONSUMER_SECRET
+        value: cs_4cc9976d3c9973932d79a06865ddf9f611b50bb0
+      - key: FLASK_ENV
+        value: production
+      - key: PYTHON_VERSION
+        value: 3.11.6
